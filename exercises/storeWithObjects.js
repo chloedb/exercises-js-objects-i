@@ -1,23 +1,5 @@
 let process = require('process');
 
-/*
-  To get started:
-
-  1. Remove the lines involving the removeThisToStart variable, so that the
-     program doesn't exit early.
-  2. Implement userCanAffordSofa
-*/
-
-// --- DELETE THE LINES STARTING HERE ---
-let removeThisToStart = true;
-
-if (removeThisToStart) {
-  console.log('Hey! Open up storeWithObjects.js to see how to get started.');
-  process.exit();
-}
-
-// --- DELETE THE LINES ENDING HERE ---
-
 /**
  * Creates and returns a new user (as an object).
  */
@@ -48,9 +30,12 @@ function newSofa(name, price) {
  * and `false` otherwise.
  */
 function userCanAffordSofa(user, sofa) {
-  // This is your job. :)
-
-  return user['budget'] >= sofa['price'];
+  if (user['budget'] > sofa['price']) {
+    return true;
+  } else {
+    return false;
+  }
+  // return user['budget'] >= sofa['price'];
 }
 
 let allUsers = [
